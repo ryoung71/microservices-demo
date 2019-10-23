@@ -32,6 +32,11 @@ spec:
         ports:
         - containerPort: 9555
         env:
+        - name: SIGNALFX_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: status.hostIP
         - name: PORT
           value: "9555"
         #- name: JAEGER_SERVICE_ADDR
