@@ -32,6 +32,11 @@ spec:
         ports:
         - containerPort: 50051
         env:
+        - name: SIGNALFX_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: status.hostIP
         - name: PORT
           value: "50051"
         readinessProbe:

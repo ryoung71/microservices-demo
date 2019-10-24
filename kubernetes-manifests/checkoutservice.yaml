@@ -37,6 +37,11 @@ spec:
             exec:
               command: ["/bin/grpc_health_probe", "-addr=:5050"]
           env:
+          - name: SIGNALFX_AGENT_HOST
+            valueFrom:
+              fieldRef:
+                apiVersion: v1
+                fieldPath: status.hostIP
           - name: PORT
             value: "5050"
           - name: PRODUCT_CATALOG_SERVICE_ADDR

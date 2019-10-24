@@ -43,6 +43,11 @@ spec:
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:8080"]
         env:
+        - name: SIGNALFX_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: status.hostIP
         - name: ENABLE_PROFILER
           value: "0"
         resources:

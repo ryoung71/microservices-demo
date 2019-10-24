@@ -37,6 +37,11 @@ spec:
             sleep 2;
           done;']
         env:
+        - name: SIGNALFX_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: status.hostIP
         - name: FRONTEND_ADDR
           value: "frontend:80"
       containers:

@@ -33,6 +33,11 @@ spec:
         - name: grpc
           containerPort: 7000
         env:
+        - name: SIGNALFX_AGENT_HOST
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: status.hostIP
         - name: PORT
           value: "7000"
         readinessProbe:
