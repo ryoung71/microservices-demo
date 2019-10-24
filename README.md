@@ -127,7 +127,7 @@ We offer three installation methods:
     ```
 
     ```sh
-    gcloud container clusters create demo --enable-autoupgrade \
+    gcloud container clusters create hipster-store-demo --enable-autoupgrade \
         --enable-autoscaling --min-nodes=3 --max-nodes=10 --num-nodes=5 --zone=us-central1-a
     ```
 
