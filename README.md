@@ -265,7 +265,7 @@ resources.
 
 Make sure to delete your GKE cluster so you don't get charged:
 
-gcloud container clusters delete hipster-store-demo
+`gcloud container clusters delete hipster-store-demo`
 
 
 ## Conferences featuring Hipster Shop
