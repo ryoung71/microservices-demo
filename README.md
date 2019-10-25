@@ -263,6 +263,11 @@ If you've deployed the application with `kubectl apply -f [...]`, you can
 run `kubectl delete -f [...]` with the same argument to clean up the deployed
 resources.
 
+Make sure to delete your GKE cluster so you don't get charged:
+
+gcloud container clusters delete hipster-store-demo
+
+
 ## Conferences featuring Hipster Shop
 
 - [Google Cloud Next'18 London – Keynote](https://youtu.be/nIq2pkNcfEI?t=3071)
