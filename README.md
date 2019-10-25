@@ -130,10 +130,10 @@ You're also going to want to have docker installed and then hook it up to GCR so
 
 You can also install and setup kubectl following the instructions here. Basically:
 
-`gcloud components install kubectl
-gcloud config set project PROJECT_ID
-gcloud config set compute/zone COMPUTE_ZONE
-gcloud container clusters get-credentials CLUSTER_NAME`
+`gcloud components install kubectl`
+`gcloud config set project PROJECT_ID`
+`gcloud config set compute/zone COMPUTE_ZONE`
+`gcloud container clusters get-credentials CLUSTER_NAME`
 
 
 1.  Create a Google Kubernetes Engine cluster and make sure `kubectl` is pointing
