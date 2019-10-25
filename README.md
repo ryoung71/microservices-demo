@@ -201,7 +201,23 @@ Deploy agent:
 
 ***Deploy Smart Gateway:***
 
+Download and unzip signalfx-smart-gateway-docker-image-for-k8s.zip
 
+Download the latest Smart Gateway binary to the same directory
+`curl -qs -H"X-SF-Token:YOUR_ACCESS_TOKEN" https://api.YOUR_SIGNALFX_REALM.signalfx.com/v2/smart-gateway/download | gunzip > smart-gateway`
+
+Build your docker image
+`docker build -t signalfx-smart-gateway-k8s:latest .`
+
+Push your docker image (if not running k8s locally)
+`docker push rickstyle/signalfx-smart-gateway-k8s:latest`
+
+Create a Kubernetes secret with your access token
+`kubectl create secret generic --from-literal access-token=<SFX-ACCESS-TOKEN> signalfx-agent`
+
+`cd signalfx-smart-gateway-k8s`
+
+'kubectl apply -f k8s-gateway-configmap.yaml -f k8s-gateway-deployment.yaml -f k8s-gateway-service.yaml'
 
 ### Option 3: Using Pre-Built Container Images
 
