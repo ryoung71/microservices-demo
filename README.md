@@ -190,6 +190,19 @@ You can also install and setup kubectl following the instructions here. Basicall
     are seeing this, run `kubectl get service frontend-external -o=yaml | kubectl apply -f-`
     to trigger load balancer reconfiguration.
 
+
+***Deploy Smart Agent:***
+
+Create a Kubernetes secret with your access token
+`kubectl create secret generic --from-literal access-token=<SFX-ACCESS-TOKEN> signalfx-agent`
+
+Deploy agent:
+`kubectl apply -f clusterrole.yaml -f clusterrolebinding.yaml -f configmap.yaml -f daemonset.yaml -f service.yaml -f serviceaccount.yaml`
+
+***Deploy Smart Gateway:***
+
+
+
 ### Option 3: Using Pre-Built Container Images
 
 > 💡 Recommended if you want to deploy the app faster in fewer steps to an
