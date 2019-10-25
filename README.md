@@ -119,6 +119,23 @@ We offer three installation methods:
 
 1.  Install tools specified in the previous section (Docker, kubectl, skaffold)
 
+Local Setup
+
+Install the gcloud tool by following the instructions at cloud.google.com/sdk/docs. Once you have that installed you can set it up by running:
+
+`gcloud auth login`
+
+You're also going to want to have docker installed and then hook it up to GCR so you can push containers:
+`gcloud auth configure-docker`
+
+You can also install and setup kubectl following the instructions here. Basically:
+
+`gcloud components install kubectl
+gcloud config set project PROJECT_ID
+gcloud config set compute/zone COMPUTE_ZONE
+gcloud container clusters get-credentials CLUSTER_NAME`
+
+
 1.  Create a Google Kubernetes Engine cluster and make sure `kubectl` is pointing
     to the cluster.
 
