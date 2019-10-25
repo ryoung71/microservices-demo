@@ -217,7 +217,8 @@ Create a Kubernetes secret with your access token
 
 `cd signalfx-smart-gateway-k8s`
 
-'kubectl apply -f k8s-gateway-configmap.yaml -f k8s-gateway-deployment.yaml -f k8s-gateway-service.yaml'
+Deploy smart gateway:
+`kubectl apply -f k8s-gateway-configmap.yaml -f k8s-gateway-deployment.yaml -f k8s-gateway-service.yaml`
 
 ### Option 3: Using Pre-Built Container Images
 
